@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="text-center">
+        <h2>
+            <span class="glyphicon glyphicon-time"></span> Horarios
+        </h2>
+    </div>
+    <br>
+    <hr class="separator">
+    <br>
+</div>
+
+
+
+<div class="container">
+    <div class="col-sm-3">
+        <input class="form-control" placeholder="Filtar..." ng-model="filter"> <br>
+        <div class="list-group">
+            <a  class="list-group-item cursor-pointer" ng-class="getClass(items.idProgram)" ng-repeat="items in progItems | filter:filter" ng-click="active(items.idProgram)">
+                {{ items.title }}
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <h2 class="font-bold">{{ data.title}}</h2>
+        <h4 class="color-chocolate font-bold">{{ data.time }}</h4>
+        <p class="font-size-18">
+            {{ data.description}}
+        </p>
+
+        <br>
+        <img ng-show="data.url != null && data.url.length > 0" class="width-full" ng-src="{{ 'services/files/files/' + data.url}}">
+    </div>
+</div>

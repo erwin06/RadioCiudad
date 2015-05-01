@@ -1,0 +1,53 @@
+<!-- Logo -->
+<div class="container">
+    <img src="resource/portada.gif" class="width-full">
+</div>
+
+<div class="container move-up">
+    <br>
+    <hr class="separator">
+    <br>
+    <div class="col-sm-4 text-center">
+        <span class="glyphicon glyphicon-globe font-size-100 color-darkcyan"></span>
+        <p class="font-size-18 color-darkcyan">
+            Somos un grupo de gente que apostamos a la libre expresión en un marco 
+            de libertad para llevar la autentica noticias a Casilda y la región.
+        </p>
+    </div>
+    <div class="col-sm-4 text-center">
+        <span class="glyphicon glyphicon-bullhorn font-size-100 color-chocolate"></span>
+        <p class="font-size-18 color-chocolate">
+            Nuestra opinión no se compra ni se vende solo se dice tal cual es.
+        </p>
+    </div>
+    <div class="col-sm-4 text-center">
+        <span class="glyphicon glyphicon-eye-open font-size-100 color-cornflowerblue"></span>
+        <p class="font-size-18 color-cornflowerblue">
+            Nuestro norte es la verdad, nuestro objetivo la justicia, nuestro 
+            sueño que hablen todos sin distinción de razas, ideologías o 
+            religión.
+        </p>
+    </div>
+</div>	
+
+<div class="container">
+    <br>
+    <hr class="separator">
+    <br>
+    <h2><b><span class="glyphicon glyphicon-th-list"></span> Últimas noticias</b></h2>
+    <br>
+    <br>
+
+    <div class="col-sm-4 text-center" ng-repeat="data in newsStore | limitTo: 3">
+        <h3 class="text-left">{{ data.title }}</h3>
+        
+        <p class="font-size-18 color-grey text-justify">
+           {{ data.description }}
+        </p>
+        <br>
+        <img ng-show="data.url != null && data.url.length > 0" class="width-full" ng-src="{{ 'services/files/files/' + data.url }}">
+        <h5 class="text-right">{{ data.date }}</h5>
+    </div>
+</div>
+
+

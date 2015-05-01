@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="text-center">
+        <h2>
+            <span class="glyphicon glyphicon-paperclip"></span> Acerca de nosotros
+        </h2>
+    </div>
+    <br>
+    <hr class="separator">
+    <br>
+</div>
+
+<!-- Logo -->
+<div class="container">
+    <h2><span class="glyphicon glyphicon-map-marker"></span> Ubicanos en</h2>
+    <label class="font-size-18">Ruta 33 y boulevard Italia</label> 
+    <br>
+    <br>
+    <img src="resource/mapa.jpg" class="width-full maps-shadows">
+</div>
+<br>
+<br>
+<div class="container">
+
+    <div class="col-sm-6">
+        <h2><span class="glyphicon glyphicon-envelope"></span> Escribinos</h2>
+        <label class="font-size-18">
+            Utilize esta medio para comunicarse con nosotros.
+            Dejenos su <b>número de teléfono</b> en el mensaje para poder 
+            comunicarnos mejor con <b>Usted.</b>
+        </label>
+        <br>
+        <br>
+        <form class="font-size-18">
+            <label>Nombre (*)</label>
+            <input type="text" class="form-control" ng-model="data.name">
+            <label>E-Mail</label>
+            <input type="text" class="form-control" ng-model="data.email">
+            <label>Asunto</label>
+            <input type="text" class="form-control" ng-model="data.title">
+            <label>Mensaje (*)</label>
+            <textarea class="form-control" ng-model="data.message"></textarea>
+            <br>
+            <button type="reset" class="btn btn-default">Limpiar</button>
+            <button type="button" class="btn btn-warning" ng-click="addComment()">Enviar</button>
+            <br>
+            <br>
+            <label>(*) Campos obligatorios</label>
+        </form>
+    </div>
+    <div class="col-sm-6 text-right">
+        <h2><span class="glyphicon glyphicon-phone-alt"></span> Llamanos</h2>
+        <br>
+        <label class="font-size-18">Linea de Mensajes: </label><br>
+        <label class="font-size-18 color-darkred">03464 - 15 - 499818</label>
+        <br>
+        <br>
+        <label class="font-size-18">Linea de Directa:  </label><br>
+        <label class="font-size-18 color-darkred">03464 - 459102 </label>
+        <br>
+        <br>
+        <label class="font-size-18">Linea Publicitaria:  </label><br>
+        <label class="font-size-18 color-darkred">03464 - 15 - 527463 / 560244</label>
+    </div>
+</div>

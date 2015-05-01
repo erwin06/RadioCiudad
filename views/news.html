@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="text-center">
+        <h2>
+            <span class="glyphicon glyphicon-th-list"></span> Noticias
+        </h2>
+    </div>
+    <br>
+    <hr class="separator">
+    <br>
+    <!--<form>-->
+    <label>Cantidad de noticias por página: </label>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            {{ currentMaxNews}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="ops in options.maxNews">
+                <a ng-click="changeMaxNews(ops.value)">{{ ops.value}}</a>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <!--<input class="form-control max-width-50por" type="text" placeholder="Filtrar..." ng-model="newsFilter">-->
+    <br>
+    <!--<label><a ng-click="openSearch()">Busqueda avanzada..</a> </label>-->
+    <!--</form>-->
+    <br>
+    <br>
+
+    <!--$$hashKey: "00M"date: "2014-11-19 20:50:28"description: "Descripúíó"idNew: "19"title: "Noticia de prueba"url: "Sin título.png"-->
+
+    <!-- Noticias -->
+    <button ng-click="currentPage = currentPage - 1" ng-disabled="currentPage == 0"
+            class="btn btn-warning">Anterior</button> 
+    <button ng-click="currentPage = currentPage + 1" 
+            ng-disabled="currentPage == numberOfPages() - 1" 
+            class="btn btn-warning">Siguiente</button> {{ currentPage + 1 + "/" + numberOfPages() }}
+    
+    <div class="container div-news" ng-repeat="data in news | startFrom: currentPage * currentMaxNews  | filter: newsFilter | limitTo: currentMaxNews">
+        <label class="label-news col-sm-12">{{ data.title}}</label>
+        <p class="p-news col-sm-6">
+            {{ data.description }}
+        </p>
+        <!--<img ng-src="{{ data.img }}"  class="col-sm-6">-->
+        <img ng-show="data.url != null && data.url.length > 0" class="col-sm-6" ng-src="{{ 'services/files/files/' + data.url}}">
+        <label>{{ data.date }}</label>
+    </div>
+
+    <!-- Fin de noticias -->
+
+    <br>
+    <br>
+    <br>
+</div>
