@@ -6,19 +6,8 @@ var __URL__ = 'services/index.php';
 angular.module('inApp', [
     'ngRoute',
     'ngCookies',
-    'inApap',
-    'ui.bootstrap',
-    'modMenu',
-    'newsModal',
-    'modAdminPage',
-    'modAdmin',
-    'modModalNews',
-    'modModa',
-    'modprogView',
-    'modalProgCntrl',
-    'changePassword',
-    'modAbout',
-    'modProg'
+    'inApp',
+    'ui.bootstrap'
 ]).config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
