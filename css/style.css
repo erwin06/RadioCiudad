@@ -1,0 +1,59 @@
+body {
+	background-color: whitesmoke;
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.navbar{
+	font-size: 17px;
+	margin-bottom: 0px;
+	font-weight: normal;
+}
+.width-100-pr {
+	width: 100%;
+}
+
+.bg-default {
+	background-color: #008cba;
+	color: white;
+}
+
+.portada {
+	background-image: url("../resource/portada2.jpg");
+  	height: 400px;
+	background-size: cover;
+}
+
+.title {
+	font-weight: normal;
+	font-size: 50px;
+	color: darkslategray;
+	margin: 10px;
+	bottom: 20px;
+}
+
+.subtitle {
+	font-size: 25px;
+  	margin: 0px 15px 0px 15px;
+  	font-weight: bolder;
+}
+
+.div-info {
+	padding: 20px;
+	  background-color: #E1E1E1;
+  font-size: 17px;
+  /*height: auto;*/
+}
+
+.img-front {
+	max-width: 500px;
+	width: 100%;
+	float: left;
+}
+
+.fn-size-17px{
+	font-size: 17px;
+}
+
+.page-header {
+	border: 0px;
+}
