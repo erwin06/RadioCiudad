@@ -57,3 +57,14 @@ body {
 .page-header {
 	border: 0px;
 }
+
+.navbar-inverse{
+	background-color: darkred;
+	border-color: darkred;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, 
+.navbar-inverse .navbar-nav>li>a:active, 
+.navbar-inverse .navbar-nav>li>a:focus {
+	background-color: chocolate;
+}
