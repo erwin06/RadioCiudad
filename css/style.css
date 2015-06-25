@@ -77,14 +77,13 @@ body {
 	max-width: 400px;
 }
 
-.new-box {
+.new-box, .program-box {
 
     border: 1px solid lightgray;
-    min-height: 170px;
+    overflow-y: auto;
     padding: 10px;
     margin: 10px 0px 10px 0px;
     background-color: whitesmoke;
-    box-shadow: 2px 2px 5px 0px 2px;
   	font-size: 17px;
 	color: #292929;
 	font-weight: lighter;
@@ -99,7 +98,7 @@ body {
 }
 
 .new-box > h4 {
-	 font-weight: bolder
+	font-weight: bolder
 }
 
 
@@ -111,4 +110,26 @@ body {
 
 .line {
 	border-right: 1px solid darkgrey;
+}
+
+.program-box > h4{
+	font-weight: bolder
+}
+
+.program-box > img {
+  	width: 150px;
+  	height: 150px;
+  	background-size: cover;
+  	float: left;
+  	margin-right: 40px;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.program-box > h5 {
+	font-weight: bolder;
+  	color: darkred;
+  	font-size: 17px;
 }
