@@ -1,5 +1,5 @@
 body {
-	background-color: whitesmoke;
+	background-color: white;
 	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
@@ -15,6 +15,10 @@ body {
 .bg-default {
 	background-color: #008cba;
 	color: white;
+}
+
+.bg-whitesmoke {
+	background-color: whitesmoke;
 }
 
 .portada {
@@ -38,16 +42,15 @@ body {
 }
 
 .div-info {
-	padding: 20px;
-	  background-color: #E1E1E1;
+  padding: 20px;
+  /* background-color: #E1E1E1; */
   font-size: 17px;
-  /*height: auto;*/
+  /* height: auto; */
+  color: grey;
 }
 
 .img-front {
-	max-width: 500px;
-	width: 100%;
-	float: left;
+	max-width: 200px;
 }
 
 .fn-size-17px{
@@ -67,4 +70,44 @@ body {
 .navbar-inverse .navbar-nav>li>a:active, 
 .navbar-inverse .navbar-nav>li>a:focus {
 	background-color: chocolate;
+}
+
+.max-width-400-px {
+	max-width: 400px;
+}
+
+.new-box {
+
+    border: 1px solid lightgray;
+    min-height: 170px;
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 5px 0px 2px;
+  	font-size: 17px;
+	color: #292929;
+	font-weight: lighter;
+}
+
+.new-box > img {
+  	width: 150px;
+  	height: 150px;
+  	background-size: cover;
+  	float: left;
+  	margin-right: 40px;
+}
+
+.new-box > h4 {
+	 font-weight: bolder
+}
+
+
+.footer {
+	min-height: 100px;
+	padding-top: 20px;
+	border: 1px solid darkgrey;
+}
+
+.line {
+	border-right: 1px solid darkgrey;
 }
