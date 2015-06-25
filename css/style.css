@@ -51,6 +51,7 @@ body {
 
 .img-front {
 	max-width: 200px;
+	float: left;
 }
 
 .fn-size-17px{
