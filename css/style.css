@@ -63,16 +63,17 @@
 	border: 0px;
 }
 
-/*.navbar-inverse{
-	background-color: darkred;
-	border-color: darkred;
+.navbar-inverse{
+	background-color: #EC003A;
+	/*border-color: #EC003A;*/
+	border:0px;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover, 
 .navbar-inverse .navbar-nav>li>a:active, 
 .navbar-inverse .navbar-nav>li>a:focus {
-	background-color: chocolate;
-}*/
+	background-color: #4A4B4D;
+}
 
 .max-width-400-px {
 	max-width: 400px;
