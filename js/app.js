@@ -18,7 +18,10 @@ var myApp = angular.module('inApp', [
                     templateUrl: 'views/programs.html',
                 })
                 .when('/about',{
-                    templateUrl: 'views/about.html',
+                    templateUrl: 'views/about.html'
+                })
+                .when('/admin',{
+                    templateUrl: 'views/admin.html'
                 })
                 .otherwise({
                     redirectTo: '/main'
