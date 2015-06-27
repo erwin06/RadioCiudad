@@ -75,6 +75,11 @@
 	background-color: #4A4B4D;
 }
 
+.btn-primary{
+	background-color: #EC003A;
+	border-color: #EC003A;
+}
+
 .max-width-400-px {
 	max-width: 400px;
 }
