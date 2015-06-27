@@ -1,12 +1,13 @@
-body {
+/*body {
 	background-color: white;
 	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif !important;
-}
+}*/
 
 .navbar{
-	font-size: 17px;
+	/*font-size: 17px;*/
 	margin-bottom: 0px;
-	font-weight: normal;
+	border-radius: 0px;
+	/*font-weight: normal;*/
 }
 .width-100-pr {
 	width: 100%;
@@ -62,7 +63,7 @@ body {
 	border: 0px;
 }
 
-.navbar-inverse{
+/*.navbar-inverse{
 	background-color: darkred;
 	border-color: darkred;
 }
@@ -71,7 +72,7 @@ body {
 .navbar-inverse .navbar-nav>li>a:active, 
 .navbar-inverse .navbar-nav>li>a:focus {
 	background-color: chocolate;
-}
+}*/
 
 .max-width-400-px {
 	max-width: 400px;
@@ -132,4 +133,8 @@ body {
 	font-weight: bolder;
   	color: darkred;
   	font-size: 17px;
+}
+
+.padding-20-0{
+	padding: 20px 0px;
 }
