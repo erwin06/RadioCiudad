@@ -160,3 +160,7 @@ label.info {
 .pointer {
 	cursor: pointer;
 }
+
+.link-active{ 
+	background-color: #bf0030;
+}

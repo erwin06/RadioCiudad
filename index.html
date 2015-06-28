@@ -12,17 +12,17 @@
     </head>
     <body>
         
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse" ng-controller="Menu">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="https://www.facebook.com/pages/FM-Radio-Ciudad-1031/486504084695156?fref=ts" target="_blank">Síguenos en Facebook</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Principal</a></li>
-                        <li><a href="#/programs">Horarios</a></li>
-                        <li><a href="#">Noticias</a></li>
-                        <li><a href="#/about">Nosotros</a></li>
+                        <li><a ng-class="getClass('main')" href="#/main">Principal</a></li>
+                        <li><a ng-class="getClass('programs')" href="#/programs">Horarios</a></li>
+                        <li><a ng-class="getClass('news')" href="#/news">Noticias</a></li>
+                        <li><a ng-class="getClass('about')" href="#/about">Nosotros</a></li>
                     </ul>
                 </div>
             </div>
@@ -64,6 +64,7 @@
         <script src="js/controllers/AdminController.js"></script>
         <script src="js/controllers/AdminTabsController.js"></script>
         <script src="js/controllers/AdminUsersController.js"></script>
+        <script src="js/controllers/MenuController.js"></script>
 
         <!-- To upload files -->
         <script src="js/libs/files/widget.js"></script>
