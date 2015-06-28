@@ -2,6 +2,7 @@
 
 // CONST
 var __URL__ = 'services/index.php';
+var __IMAGE__URL__ = 'services/files/files/';
 
 var myApp = angular.module('inApp', [
     'ngRoute',

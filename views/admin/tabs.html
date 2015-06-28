@@ -1,0 +1,15 @@
+<div ng-controller="AdminTabs" class="pointer">
+	<ul class="nav nav-tabs">
+		<li role="presentation" ng-class="getClass('site')">
+			<a ng-click="template = templates[0]">Configuración del sitio</a></li>
+		<li role="presentation" ng-class="getClass('changePass')">
+			<a ng-click="template = templates[1]">Cambio de clave</a></li>
+		<li role="presentation" ng-class="getClass('users')">
+			<a ng-click="template = templates[2]">Usuarios</a></li>
+		<li role="presentation" ng-class="getClass('news')">
+			<a ng-click="template = templates[3]">Noticias</a></li>
+		<li role="presentation" ng-class="getClass('programs')">
+			<a ng-click="template = templates[4]">Horarios</a></li>
+	</ul>
+	<div class="padding-50-0" ng-include src="template"></div>
+</div>
