@@ -24,7 +24,13 @@
 
     $result = $mysqli->query($quer);
 
-    var_dump($result);
+    if($result === TRUE){
+        echo 'Se ejecutó con éxito';
+    } else {
+       echo $mysqli->error;
+    }
+
+    // var_dump($result);
     // // Prepara la consulta
     // if ($result = $mysqli->prepare($query)) {
 
