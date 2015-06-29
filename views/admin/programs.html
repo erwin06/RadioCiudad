@@ -19,10 +19,6 @@
 				<span class="btn btn-primary fileinput-button">
 				    <input id="fileupload" type="file" name="files[]">
 				</span>
-				<br/><br/>
-				<div id="progress" class="progress">
-				    <div class="progress-bar progress-bar-success"></div>
-				</div>
 				<label class="info">Cuando termine de subir la foto, se visualizará en la pantalla</label>
 			</div>
 			<button type="button" class="btn btn-primary" ng-click="login()">Guardar noticia</button>
@@ -73,26 +69,6 @@ $( document ).ready(function() {
             $.each(data.result.files, function (index, file) {
                 $('#portada').attr('style','background-image: url("' + __IMAGE__URL__ + file.name + '");')
             });
-            $('#progress .progress-bar').css(
-                    'width',
-                    0 + '%'
-                );
-        },
-        progressall: function (e, data) {
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            if(progress > 0 && progress < 100){
-                $('#progress .progress-bar').show();
-                $('#progress .progress-bar').css(
-                    'width',
-                    progress + '%'
-                );
-            } else {
-                 $('#progress .progress-bar').hide();
-            }
-            
-        },
-        error: function(e,data){
-            
         }
     }); 
 });

@@ -1,4 +1,4 @@
-myApp.controller('AdminTabs',function($scope) {
+myApp.controller('AdminTabs',function($scope, $cookieStore, $location) {
  		$scope.template = 'views/admin/site.html';
  		$scope.templates = [];
  		$scope.templates.push('views/admin/site.html');
@@ -13,5 +13,11 @@ myApp.controller('AdminTabs',function($scope) {
  				return 'active'
  		}
 
+ 		$scope.logOut = function() {
+ 			$cookieStore.remove('iduser');
+            $cookieStore.remove('idsession');
+            $cookieStore.remove('admin');
+            $location.path('/main');
+ 		}
 
 });

@@ -1,62 +1,61 @@
-<label>Nueva noticia</label>
-<div class="div-spacer-small"></div>
-<div class="container">
-	<div class="col-sm-6">
-		<form>
-			<div class="form-group">
-				<label for="exampleInputEmail1">Título de la noticia</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Escribe tu usuario...">
-			</div>
-			<div class="form-group">
-				<label for="exampleInputPassword1">Contenido</label>
-				<textarea class="form-control" placeholder="Contenido de la nota..."></textarea>
-			</div>
-			<div class="form-group">
-				<span class="btn btn-primary fileinput-button">
-				    <input id="fileupload" type="file" name="files[]">
-				</span>
-				<br/><br/>
-				<div id="progress" class="progress">
-				    <div class="progress-bar progress-bar-success"></div>
+<div ng-controller="AdminNews">
+	<label>Nueva noticia</label>
+	<div class="div-spacer-small"></div>
+	<div class="container">
+		<div class="col-sm-6">
+			<form>
+				<div class="form-group">
+					<label>Título de la noticia</label>
+					<input type="text" class="form-control" placeholder="Escribe tu usuario..." ng-model="data.title">
 				</div>
-				<label class="info">Cuando termine de subir la foto, se visualizará en la pantalla</label>
+				<div class="form-group">
+					<label>Contenido</label>
+					<textarea class="form-control" placeholder="Contenido de la nota..."  ng-model="data.message"></textarea>
+				</div>
+				<div class="form-group">
+					<span class="btn btn-primary fileinput-button">
+					    <input id="fileupload" type="file" name="files[]">
+					</span>
+					<label class="info">Cuando termine de subir la foto, se visualizará en la pantalla</label>
+				</div>
+				 <label type="hidden" id="newPicture">
+				<button type="button" class="btn btn-primary" ng-click="login()">Guardar noticia</button>
+				<div class="div-spacer-small"></div>
+			</form>
+		</div>
+		<div class="col-sm-6">
+			<div class="portada" id="portada">
+			     <div class="page-header"></div>
 			</div>
-			<button type="button" class="btn btn-primary" ng-click="login()">Guardar noticia</button>
-			<div class="div-spacer-small"></div>
-		</form>
-	</div>
-	<div class="col-sm-6">
-		<div class="portada" id="portada">
-		     <div class="page-header"></div>
 		</div>
 	</div>
-</div>
-<label>Listado de noticias</label>
-<div class="container">
-	<div class="new-box">
-		<img style="background-image: url('services/files/files/portada2.jpg');">
-		<label>Nullam ac elit quis velit consequat placerat et a diam</label>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
-		</p>
- 	</div>
- 	<div class="text-right">
- 		<label class="btn btn-primary">Editar</label>
- 		<label class="btn btn-default">Eliminar</label>
- 	</div>
-</div>
-<div class="container">
-	<div class="new-box">
-		<img style="background-image: url('services/files/files/portada3.jpg');">
-		<label>Nullam ac elit quis velit consequat placerat et a diam</label>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
-		</p>
- 	</div>
- 	<div class="text-right">
- 		<label class="btn btn-primary">Editar</label>
- 		<label class="btn btn-default">Eliminar</label>
- 	</div>
+	<label>Listado de noticias</label>
+	<div class="container">
+		<div class="new-box">
+			<img style="background-image: url('services/files/files/portada2.jpg');">
+			<label>Nullam ac elit quis velit consequat placerat et a diam</label>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
+			</p>
+	 	</div>
+	 	<div class="text-right">
+	 		<label class="btn btn-primary">Editar</label>
+	 		<label class="btn btn-default">Eliminar</label>
+	 	</div>
+	</div>
+	<div class="container">
+		<div class="new-box">
+			<img style="background-image: url('services/files/files/portada3.jpg');">
+			<label>Nullam ac elit quis velit consequat placerat et a diam</label>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
+			</p>
+	 	</div>
+	 	<div class="text-right">
+	 		<label class="btn btn-primary">Editar</label>
+	 		<label class="btn btn-default">Eliminar</label>
+	 	</div>
+	</div>
 </div>
 <script>
 $( document ).ready(function() {
@@ -66,28 +65,10 @@ $( document ).ready(function() {
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
                 $('#portada').attr('style','background-image: url("' + __IMAGE__URL__ + file.name + '");')
+                $('#newPicture').attr('value',file.name);
+                $('#savePicture').show();
             });
-            $('#progress .progress-bar').css(
-                    'width',
-                    0 + '%'
-                );
-        },
-        progressall: function (e, data) {
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            if(progress > 0 && progress < 100){
-                $('#progress .progress-bar').show();
-                $('#progress .progress-bar').css(
-                    'width',
-                    progress + '%'
-                );
-            } else {
-                 $('#progress .progress-bar').hide();
-            }
-            
-        },
-        error: function(e,data){
-            
         }
-    }); 
+    });
 });
 </script>
