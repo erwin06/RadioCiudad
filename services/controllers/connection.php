@@ -12,7 +12,7 @@ class Connection {
 
     static public function getInstance() {
         if (self::$instancia == null) {
-            self::$instancia = new Connection("localhost", "root", "", "radiociudad");
+            self::$instancia = new Connection("localhost", "m2000315_Radio", "meDUtozu49", "m2000315_Radio");
         }
         return self::$instancia;
     }
