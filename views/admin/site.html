@@ -1,32 +1,22 @@
 <div ng-controller="AdminSite">
     <label>Portada actual</label> <br/>
     <div class="div-spacer-small"></div>
-    <div class="portada" style='background-image: url("{{front_image}}");' id="portada">
+    <div class="portada" style='background-image: url("{{front_image}}");' id="imagenUploaded">
         <div class="container">
             <div class="page-header">
             </div>
         </div>
     </div>
+    <div class="progress" id="progressBarContainer" style="display:none;z-index: 1001;">
+        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 20%;" id="progressBar"></div>
+    </div>
     <div class="div-spacer-small"></div>
     <span class="btn btn-primary fileinput-button">
         <input id="fileupload" type="file" name="files[]">
     </span>
+    
     <label type="hidden" id="newPicture">
     <button class="btn btn-warning" id="savePicture" style="display: none" ng-click="setFrontPhoto()">Guardar imagen</button>
     <div class="div-spacer-small"></div>
 </div>
-<script>
-$( document ).ready(function() {
-    $('#fileupload').fileupload({
-        url: 'services/files/',
-        dataType: 'json',
-        done: function (e, data) {
-            $.each(data.result.files, function (index, file) {
-                $('#portada').attr('style','background-image: url("' + __IMAGE__URL__ + file.name + '");')
-                $('#newPicture').attr('value',file.name);
-                $('#savePicture').show();
-            });
-        }
-    });
-});
-</script>
+<script src="js/others/Upload.js"></script>

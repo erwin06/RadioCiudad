@@ -15,5 +15,5 @@ function server_error(){
 
 function xss(text){
 	var regex = /^[0-9a-zA-ZãÃáÁàÀâÂäÄẽẼéÉèÈêÊëËĩĨíÍìÌîÎïÏõÕóÓòÒôÔöÖũŨúÚùÙûÛüÜçÇñÑ ,:_¡!¿%#@ºª’´`'"\$\-\/\^\(\)\+\?\*\.\n]*$/;
-	regex.test(text) ? return true : return false;
+	return regex.test(text)
 }

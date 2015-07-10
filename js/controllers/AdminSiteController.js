@@ -25,9 +25,7 @@ myApp.controller('AdminSite',function($scope, $http, $cookies, $location) {
 		        } else {
 		        	alert.error(response.message)
 		        }
-	        }).error(function(response){
-	        	alert.error("Ups! Algo no salió como esperábamos. Intenta nuevamente más tarde")
-	        });
+	        }).error(errorMessage());
 	}
 
 	// Obtengo la foto
@@ -39,8 +37,6 @@ myApp.controller('AdminSite',function($scope, $http, $cookies, $location) {
 	        } else {
 	        	alert.error(response.message)
 	        }
-        }).error(function(response){
-        	alert.error("Ups! Algo no salió como esperábamos. Intenta nuevamente más tarde")
-        });
+        }).error(errorMessage());
 
 });

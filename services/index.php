@@ -12,26 +12,27 @@ include("controllers/configuration.php");
 // Obtengo los datos
 $input = json_decode(file_get_contents("php://input"));
 $operation = $input->operation ? $input->operation : "__";
-$data = isset($input->data) ? $input->data : null;
-
 $messageReturn = null;
 
 
 switch ($operation) {
     case 'register':
-        $messageReturn = User::register($data);
+        $messageReturn = User::register($input->data);
         break;
     case 'login':
-        $messageReturn = User::login($data);
+        $messageReturn = User::login($input->data);
         break;
     case 'getFrontPhoto':
     	$messageReturn = Configuration::getFrontPhoto();
     	break;
     case 'setFrontPhoto':
-        $messageReturn = Configuration::setFrontPhoto($input->userData, $data);
+        $messageReturn = Configuration::setFrontPhoto($input->userData, $input->data);
         break;
     case 'changePassword':
-        $messageReturn = User::changePassword($input->userData, $data);
+        $messageReturn = User::changePassword($input->userData, $input->data);
+        break;
+    case 'addNew':
+        $messageReturn = News::addNew($input->userData);
         break;
 }
 

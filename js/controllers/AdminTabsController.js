@@ -1,5 +1,5 @@
 myApp.controller('AdminTabs',function($scope, $cookieStore, $location) {
- 		$scope.template = 'views/admin/site.html';
+ 		$scope.template = 'views/admin/news.html';
  		$scope.templates = [];
  		$scope.templates.push('views/admin/site.html');
  		$scope.templates.push('views/admin/changePass.html');

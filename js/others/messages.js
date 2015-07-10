@@ -6,3 +6,6 @@ var messages = {
     
 };
 
+function errorMessage(message){
+	alert.error(message ? message : "Ups! Algo no salió como esperábamos. Intenta nuevamente más tarde")
+}

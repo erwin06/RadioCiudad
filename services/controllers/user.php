@@ -33,11 +33,6 @@ class User {
         return isset($response) ? $response->getResponse() : Error::genericError();
     }
 
-    // /**
-    //  * Checkea si un usuario tiene una session activa
-    //  * @param type $userdata
-    //  * @return boolean
-    //  */
     static function checkSession($userdata) {
         $iduser = $userdata->iduser;
         $idsession = $userdata->idsession;
@@ -51,27 +46,6 @@ class User {
         }
         return false;
     }
-
-    // static function getUsers() {
-    //     $select = array('iduser', 'user', 'name');
-    //     $from = 'user';
-    //     $arr = Connection::getInstance()->selectPlus($select, $from);
-    //     if ($arr != null)
-    //         $response = new Response(true, "Almuerzos obtenidos", $arr);
-    //     else
-    //         $response = new Response(false, "No hay alumnos");
-
-    //     return $response->getResponse();
-    // }
-
-    // static function restorePass($data) {
-    //     $iduser = $data->iduser;
-    //     $pass = md5(12345);
-    //     Connection::getInstance()->update("UPDATE user SET pass='$pass' WHERE iduser='$iduser'");
-    //     $response = new Response(true, "Contraseña restaurada");
-
-    //     return $response->getResponse();
-    // }
 
     static function changePassword($userData, $data) {
         // Data
@@ -108,47 +82,5 @@ class User {
         return isset($response) ? $response->getResponse() : Error::genericError();
         
     }
-
-
-    // static function register($data){
-    //     $userMail = $data->email ? $data->email : null;
-    //     $password = $data->password ? $data->password : null;
-    //     $newPassword = $data->repeatPassword ? $data->repeatPassword : null;
-
-    //     if(isset($userMail) && isset($password) && isset($newPassword)){
-    //         $sanitized_mail = filter_var($userMail, FILTER_SANITIZE_EMAIL);
-    //         if (filter_var($sanitized_mail, FILTER_VALIDATE_EMAIL)) {
-    //             if(self::existsEmail($sanitized_mail)){
-    //                 $response = new Response(false, "El Email ya fué registrado");
-    //             }else{
-    //                 if($password == $newPassword){
-    //                     if(preg_match("/[a-zA-z0-9]{5,20}/",$password)){
-    //                         $mysqli = Connection::getInstance()->getDB();
-    //                         if ($stmt = $mysqli->prepare("INSERT INTO user (email, password) VALUES (?, ?)")) {
-    //                             $stmt->bind_param("ss", $sanitized_mail, md5($password));
-    //                             if($stmt->execute()){
-    //                                 $response = new Response(true, "El usuario se registró correctamente");
-    //                             }
-    //                         }
-    //                     } else {
-    //                          $response = new Response(false, "La contraseña no es válida");
-    //                     }   
-    //                 } else {
-    //                     $response = new Response(false, "Las contraseñas no coinciden");
-    //                 }
-    //             }
-    //         } else { 
-    //             $response = new Response(false, "Ingrese un E-mail válido");
-    //         }
-    //     }
-
-    //     return isset($response) ? $response->getResponse() : Error::genericError();
-    // }
-
-    // static function existsEmail ($mail) {
-    //      return Connection::getInstance()->moreThanOne("SELECT * FROM user WHERE email = '$mail'");
-    // }
-
-
 
 }
