@@ -1,5 +1,8 @@
 <div class="width-100-pr"> 
-	<img src="{{front_image}}" class="width-100-pr"/>
+	<!-- <img src="{{front_image}}" class="width-100-pr" onload="loadImg()"/> -->
+</div>
+<div class="container text-center loading" id="loading">
+	 <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Cargando portada...
 </div>
 <div class="bg-whitesmoke">
 	<div class="container">
@@ -33,3 +36,9 @@
 		</p>
 	</div>
 </div>
+<script>
+	function loadImg(){
+		$("#loading").hide();
+	}
+</script>
+

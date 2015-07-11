@@ -56,6 +56,7 @@ var alert = {
         });
     },
     error: function(message, callback) {
+        if(!message) return;
         if (message && typeof message != 'string')
             message = 'Invalid input string';
         alert.show("e", message, alert.defaultButton, function() {

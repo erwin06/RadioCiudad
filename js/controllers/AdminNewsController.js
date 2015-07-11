@@ -30,7 +30,9 @@ myApp.controller('AdminNews',function($scope, $http, $cookies) {
 		        } else {
 		        	alert.error(response.message)
 		        }
-	        }).error(errorMessage());
+	        }).error(function(response){
+	        	alert.error("Ups! Algo no salió como esperábamos. Intenta nuevamente más tarde")
+	        });
 
 	}
 
@@ -59,7 +61,9 @@ myApp.controller('AdminNews',function($scope, $http, $cookies) {
 			        } else {
 			        	alert.error(response.message)
 			        }
-		        }).error(errorMessage());
+		        }).error(function(response){
+		        	alert.error("Ups! Algo no salió como esperábamos. Intenta nuevamente más tarde")
+		        });
 
 			}
 		});

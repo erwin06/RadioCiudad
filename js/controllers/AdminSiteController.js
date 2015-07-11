@@ -24,7 +24,9 @@ myApp.controller('AdminSite',function($scope, $http, $cookies, $location) {
 		        } else {
 		        	alert.error(response.message)
 		        }
-	        }).error(errorMessage());
+	        }).error(function(response){
+	        	alert.error("Ups! Algo no salió como esperábamos. Intenta nuevamente más tarde")
+	        });
 	}
 
 	// Obtengo la foto

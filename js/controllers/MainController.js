@@ -1,6 +1,7 @@
 myApp.controller('Main',function($scope, $http) {
 
         $scope.news = [];
+        $scope.loading = true;
  	// Obtengo la foto
 	$http.post(__URL__, {operation: "getFrontPhoto"})
         .success(function (response) {
@@ -9,9 +10,7 @@ myApp.controller('Main',function($scope, $http) {
 	        } else {
 	        	alert.error(response.message)
 	        }
-        }).error(function(response){
-        	alert.error("Ups! Algo no salió como esperábamos. Intenta nuevamente más tarde")
-        });
+        })
 
         // Load picture
         $http.post(__URL__, {operation: "getLastNews"})
