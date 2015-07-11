@@ -1,15 +1,8 @@
-<!-- <div class="portada" style="background-image: url('{{front_image}}')">
-	<div class="container">
-		<div class="page-header">
-		</div>
-	</div>
-</div> -->
 <div class="width-100-pr"> 
 	<img src="{{front_image}}" class="width-100-pr"/>
 </div>
 <div class="bg-whitesmoke">
 	<div class="container">
-		<!-- <h2>Radio Ciudad 103.1 FM</h2> -->
 		<div class="div-info">
 			<div class="text-center">
 				<img src="resource/logo.png"  class="img-front animated zoomIn">
@@ -20,42 +13,23 @@
 				Nuestra opinión no se compra ni se vende solo se dice tal cual es.<br/>
 				Nuestro norte es la verdad, nuestro objetivo la justicia, nuestro sueño que hablen todos sin distinción de razas, ideologías o religión.<br/>
 			</div>
-
-			
 		</div>
 	</div>
 </div>
 
-<!-- <div class="container">
+<div class="container">
 	<div class="page-header">
 		<h2>Últimas noticias</h2>
 	</div>
-</div> -->
+</div>
 <!-- news -->
-<!-- <div class="container">
+<div class="container" ng-repeat="item in news">
 	<div class="new-box">
-		<img style="background-image: url('resource/cc1.jpg');">
-		<label>Nullam ac elit quis velit consequat placerat et a diam</label>
+		<img ng-if="item.picture" style="background-image: url('services/files/files/{{item.picture}}');">
+		<label>{{ item.title }}</label> <br/>
+		<label class="info">{{item.date}}</label>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
+			{{item.message}}
 		</p>
 	</div>
 </div>
-<div class="container">
-	<div class="new-box">
-		<img style="background-image: url('resource/cc2.jpg');">
-		<label>Nullam ac elit quis velit consequat placerat et a diam</label>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
-		</p>
-	</div>
-</div>
-<div class="container">
-	<div class="new-box">
-		<img style="background-image: url('resource/cc3.jpg');">
-		<label>Nullam ac elit quis velit consequat placerat et a diam</label>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
-		</p>
- 	</div>
-</div> -->

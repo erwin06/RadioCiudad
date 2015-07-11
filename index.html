@@ -15,9 +15,15 @@
         <nav class="navbar navbar-inverse" ng-controller="Menu">
             <div class="container-fluid">
                 <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuColapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                     <a class="navbar-brand" href="https://www.facebook.com/pages/FM-Radio-Ciudad-1031/486504084695156?fref=ts" target="_blank">Síguenos en Facebook</a>
                 </div>
-                <div class="collapse navbar-collapse">
+                <div class="collapse navbar-collapse" id="menuColapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a ng-class="getClass('main')" href="#/main">Principal</a></li>
                         <li><a ng-class="getClass('programs')" href="#/programs">Horarios</a></li>
@@ -29,7 +35,7 @@
         </nav>
         <div class="padding-bottom-100-px" ng-view>
         </div>
-        <div class="bg-whitesmoke footer">
+        <div class="bg-whitesmoke footer" ng-controller="Menu">
             <div clasS="container text-center">
                 <div class="col-sm-4 col-md-4 line">
                     Radio Ciudad 103.1 FM </br> Todos los derechos reservados.
@@ -67,7 +73,9 @@
         <script src="js/controllers/AdminSiteController.js"></script>
         <script src="js/controllers/AdminChangePasswordController.js"></script>
         <script src="js/controllers/AdminNewsController.js"></script>
+        <script src="js/controllers/AdminProgramsController.js"></script>
         <script src="js/controllers/MenuController.js"></script>
+        <script src="js/controllers/CommentController.js"></script>
 
         <!-- To upload files -->
         <script src="js/libs/files/widget.js"></script>

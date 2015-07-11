@@ -20,7 +20,6 @@ myApp.controller('Admin',function($scope, $http, $cookies) {
 
 		$http.post(__URL__, json)
 	        .success(function (response) {
-	        	console.info(response)
 	        	if(response.success){
 		            $cookies.iduser = response.optional.iduser
 		            $cookies.idsession = response.optional.idsession

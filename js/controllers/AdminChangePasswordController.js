@@ -20,7 +20,6 @@ myApp.controller('AdminChangePassword',function($scope, $http, $cookies) {
 
 		$http.post(__URL__, json)
 	        .success(function (response) {
-	        	console.log(response)
 	        	if(response.success){
 	        		alert.info(response.message)
 	        		$scope.data = {}

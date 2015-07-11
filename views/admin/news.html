@@ -34,31 +34,21 @@
 		</div>
 	</div>
 	<label>Listado de noticias</label>
-	<!-- <div class="container">
+	<div class="container" ng-repeat="item in news">
 		<div class="new-box">
-			<img style="background-image: url('services/files/files/portada2.jpg');">
-			<label>Nullam ac elit quis velit consequat placerat et a diam</label>
+			<img ng-if="item.picture" style="background-image: url('services/files/files/{{item.picture}}');">
+			<label>{{ item.title }}</label><br/>
+			<label class="info">{{item.date}}</label>
+			<div class="div-spacer-small"></div>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
+				{{item.message}}
 			</p>
+			<label>{{ item.date }}</label>
 	 	</div>
 	 	<div class="text-right">
-	 		<label class="btn btn-primary">Editar</label>
-	 		<label class="btn btn-default">Eliminar</label>
+	 		<!-- <label class="btn btn-primary">Editar</label> -->
+	 		<label class="btn btn-default" ng-click="deleteNew(item.idNew)">Eliminar</label>
 	 	</div>
 	</div>
-	<div class="container">
-		<div class="new-box">
-			<img style="background-image: url('services/files/files/portada3.jpg');">
-			<label>Nullam ac elit quis velit consequat placerat et a diam</label>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales interdum odio, placerat rutrum justo semper sed. Etiam sollicitudin eleifend dictum. Cras elementum mauris elit, vitae venenatis odio fermentum a. Suspendisse augue dui, feugiat id elementum ut, vehicula sit amet leo. Nullam ac elit quis velit consequat placerat et a diam
-			</p>
-	 	</div>
-	 	<div class="text-right">
-	 		<label class="btn btn-primary">Editar</label>
-	 		<label class="btn btn-default">Eliminar</label>
-	 	</div>
-	</div> -->
 </div>
 <script src="js/others/Upload.js"></script>

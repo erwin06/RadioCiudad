@@ -7,6 +7,9 @@ include("controllers/error.php");
 include("controllers/connection.php");
 include("controllers/user.php");
 include("controllers/configuration.php");
+include("controllers/news.php");
+include("controllers/programs.php");
+include("controllers/comments.php");
 
 
 // Obtengo los datos
@@ -32,7 +35,28 @@ switch ($operation) {
         $messageReturn = User::changePassword($input->userData, $input->data);
         break;
     case 'addNew':
-        $messageReturn = News::addNew($input->userData);
+        $messageReturn = News::addNew($input->userData, $input->data);
+        break;
+    case 'getNews':
+        $messageReturn = News::getNews();
+        break;
+    case 'getLastNews':
+        $messageReturn = News::getNews(3);
+        break;
+    case 'delNew':
+        $messageReturn = News::delNew($input->userData, $input->data);
+        break;
+    case 'addProgram':
+        $messageReturn = Programs::addProgram($input->userData, $input->data);
+        break;
+    case 'getPrograms':
+        $messageReturn = Programs::getPrograms();
+        break;
+    case 'delProgram':
+        $messageReturn = Programs::delProgram($input->userData, $input->data);
+        break;
+    case 'addComment':
+        $messageReturn = Comments::addComment($input->data);
         break;
 }
 

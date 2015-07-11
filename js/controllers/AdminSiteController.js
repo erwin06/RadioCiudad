@@ -18,7 +18,6 @@ myApp.controller('AdminSite',function($scope, $http, $cookies, $location) {
 
 		$http.post(__URL__, json)
 	        .success(function (response) {
-	        	console.info(response)
 	        	if(response.success){
 		            alert.info(response.message)
 		            $('#savePicture').hide()
@@ -31,12 +30,9 @@ myApp.controller('AdminSite',function($scope, $http, $cookies, $location) {
 	// Obtengo la foto
 	$http.post(__URL__, {operation: "getFrontPhoto"})
         .success(function (response) {
-        	console.info(response)
         	if(response.success){
 	            $scope.front_image = __IMAGE__URL__ + response.optional.frontphoto;
-	        } else {
-	        	alert.error(response.message)
 	        }
-        }).error(errorMessage());
+        });
 
 });

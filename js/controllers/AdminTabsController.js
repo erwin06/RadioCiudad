@@ -1,11 +1,12 @@
 myApp.controller('AdminTabs',function($scope, $cookieStore, $location) {
- 		$scope.template = 'views/admin/news.html';
+ 		$scope.template = 'views/admin/programs.html';
  		$scope.templates = [];
  		$scope.templates.push('views/admin/site.html');
  		$scope.templates.push('views/admin/changePass.html');
  		$scope.templates.push('views/admin/users.html');
  		$scope.templates.push('views/admin/news.html');
  		$scope.templates.push('views/admin/programs.html');
+ 		$scope.templates.push('views/admin/comments.html');
 
 
  		$scope.getClass = function(site){

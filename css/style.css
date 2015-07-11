@@ -90,6 +90,12 @@
   border-color: #269abc;
 }
 
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
+	color: white;
+  	background-color: #bf0030;
+  	border-color: #bf0030;
+}
+
 .max-width-400-px {
 	max-width: 400px;
 }
@@ -120,7 +126,6 @@
 	border: 1px solid darkgrey;
     bottom: 0;
   	width: 100%;
-  	position: fixed;
 }
 
 .line {
