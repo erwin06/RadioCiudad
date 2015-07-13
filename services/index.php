@@ -61,6 +61,9 @@ switch ($operation) {
     case 'getComments':
         $messageReturn = Comments::getComments($input->userData);
         break;
+    case 'delComment':
+        $messageReturn = Comments::delComment($input->userData, $input->data);
+        break;
 }
 
 if ($messageReturn == null) {

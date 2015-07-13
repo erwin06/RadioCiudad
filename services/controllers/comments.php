@@ -57,4 +57,26 @@ class Comments {
         if(isset($stmt)) $stmt->close();
         return isset($response) ? $response->getResponse() : Error::genericError();
     }
+
+    static function delComment($userData, $data) {
+
+        if(!User::checkSession($userData))
+            return Error::noPermission();
+
+        $idComment = isset($data->idComment) ? $data->idComment : null;
+
+        if(isset($idComment)){
+            $mysqli = Connection::getInstance()->getDB();
+            if ($stmt = $mysqli->prepare("DELETE FROM comments WHERE idcomments = ?")) {
+                $stmt->bind_param("i", $idComment);
+                if($stmt->execute()){
+                    $response = new Response(true, "Comentario eliminado");
+                }
+            }
+        }
+
+        if(isset($stmt)) $stmt->close();
+
+        return isset($response) ? $response->getResponse() : Error::genericError();
+    }
 }
