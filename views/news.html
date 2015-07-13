@@ -1,7 +1,7 @@
-<div ng-controller="Programs">
+<div ng-controller="News">
 	<div class="container">
 		<div class="page-header">
-			<h2>Nuestra programación</h2>
+			<h2>Noticias</h2>
 		</div>
 		<div class="col-sm-6 no-padding">
 			<input type="text" class="form-control" placeholder="Filtrar..." ng-model="filter">
@@ -9,13 +9,13 @@
 	</div>
 	<div class="div-spacer-small"></div>
 	<div class="div-spacer-small"></div>
-	<div class="container" ng-repeat="program in programs | filter:filter">
+	<div class="container" ng-repeat="item in news | filter:filter">
 		<div class="program-box">
-			<label>{{program.title}}</label> <br/>
+			<label>{{item.title}}</label> <br/>
+			<label class="info">{{item.date}}</label>
 			<div class="div-spacer-small"></div>
-			<img ng-if="program.picture" style="background-image: url('services/files/files/{{program.picture}}');">
-			<p>{{program.description}} </p>
-			<h5>{{program.time}}</h5>
+			<img ng-if="item.picture" style="background-image: url('services/files/files/{{item.picture}}');">
+			<p>{{item.message}} </p>
 		</div>
 	</div>
 </div>
