@@ -58,6 +58,9 @@ switch ($operation) {
     case 'addComment':
         $messageReturn = Comments::addComment($input->data);
         break;
+    case 'getComments':
+        $messageReturn = Comments::getComments($input->userData);
+        break;
 }
 
 if ($messageReturn == null) {

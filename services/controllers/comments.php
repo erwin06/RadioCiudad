@@ -23,4 +23,38 @@ class Comments {
 
         return isset($response) ? $response->getResponse() : Error::genericError();
     }
+
+    static function getComments($userData){
+
+        if(!User::checkSession($userData))
+            return Error::noPermission();
+
+
+        $mysqli = Connection::getInstance()->getDB();
+        $query = "SELECT `idcomments`, `from`, `subjet`, `date`, `message`, `email` FROM comments ORDER BY idcomments DESC";
+        if ($stmt = $mysqli->prepare($query)) {
+            if($stmt->execute()){
+                $stmt->bind_result($idcomments, $from, $subjet, $date, $message, $email);
+                $result = array();
+                while($stmt->fetch()){
+                    $item = array();
+                    $item["idComments"] = $idcomments;
+                    $item["from"] = $from;
+                    $item["subjet"] = $subjet;
+                    $item["date"] = $date;
+                    $item["message"] = $message;
+                    $item["email"] = $email;
+                    array_push($result, $item);
+                }
+
+                $response = new Response(true, "Comentarios", $result);
+
+            } else {
+                $response = new Response(false, "Ups! Algo no salió bien :(");
+            }
+        }
+
+        if(isset($stmt)) $stmt->close();
+        return isset($response) ? $response->getResponse() : Error::genericError();
+    }
 }
