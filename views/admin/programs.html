@@ -1,0 +1,56 @@
+<div ng-controller="AdminPrograms">
+	<label>Nueva programa</label>
+	<div class="div-spacer-small"></div>
+	<div class="container">
+		<div class="col-sm-6">
+			<form>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Título del programa</label>
+					<input type="text" class="form-control" placeholder="Escribe tu usuario..." ng-model="data.title">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Descripción</label>
+					<textarea class="form-control" rows="10" placeholder="Contenido de la nota..." ng-model="data.description"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Horario de transmición</label>
+					<input type="text" class="form-control" placeholder="Escribe tu usuario..." ng-model="data.time">
+				</div>
+				<div class="progress" id="progressBarContainer" style="display:none;z-index: 1001;">
+				        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 20%;" id="progressBar"></div>
+				    </div>
+				<div class="form-group">
+					<span class="btn btn-primary fileinput-button">
+					    <input id="fileupload" type="file" name="files[]">
+					</span>
+					<label class="info">Cuando termine de subir la foto, se visualizará en la pantalla</label>
+				</div>
+				<label type="hidden" id="newPicture">
+				<button type="button" class="btn btn-primary" ng-click="addProgram()">Guardar programa</button>
+				<div class="div-spacer-small"></div>
+			</form>
+		</div>
+		<div class="col-sm-6">
+			<div class="portada" id="imagenUploaded">
+			     <div class="page-header"></div>
+			</div>
+		</div>
+	</div>
+
+	<label>Listado de noticias</label>
+	<div class="container" ng-repeat="program in programs">
+		<div class="new-box">
+			<img ng-if="program.picture" style="background-image: url('services/files/files/{{program.picture}}');">
+			<label>{{program.title}}</label>
+			<p>
+				{{program.description}}
+			</p>
+			<label class="big-info">{{program.time}}</label>
+	 	</div>
+	 	<div class="text-right">
+	 		<!-- <label class="btn btn-primary">Editar</label> -->
+	 		<label class="btn btn-default" ng-click="delProgram(program.idProgram)">Eliminar</label>
+	 	</div>
+	</div>
+</div>
+<script src="js/others/Upload.js"></script>

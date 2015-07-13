@@ -12,3 +12,8 @@ function hideModal() {
 function server_error(){
     alert.error(messages.server.fail_connection);
 }
+
+function xss(text){
+	var regex = /^[0-9a-zA-ZãÃáÁàÀâÂäÄẽẼéÉèÈêÊëËĩĨíÍìÌîÎïÏõÕóÓòÒôÔöÖũŨúÚùÙûÛüÜçÇñÑ ,:_¡!¿%#@ºª’´`'"\$\-\/\^\(\)\+\?\*\.\n]*$/;
+	return regex.test(text)
+}

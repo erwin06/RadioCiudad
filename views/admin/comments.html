@@ -1,0 +1,14 @@
+<div ng-controller="AdminComments">
+	<div ng-repeat="comment in comments">
+		<label>{{comment.from}}</label><label class="info" style="padding-left: 30px">{{ comment.date }}</label><br>
+		<label class="info">{{ comment.subjet ? comment.subjet : "No dejó su motivo :/ " }}</label><br>
+		<label class="info">{{ comment.email ? comment.email : "Parece que no tenía un E-Mail"}}</label><br>
+		<p> <b>Mensaje:</b><br/>
+			{{comment.message}}
+		</p>
+		<div class="text-right">
+			<label class="btn btn-default" ng-click="deleteComment(comment.idComments)">Eliminar</label>
+		</div>
+		<hr/>
+	</div>
+</div>
