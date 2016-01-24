@@ -207,3 +207,9 @@ label.info {
 .padding-left-30px {
 	padding-left: 30px;
 }
+
+.player {
+	padding: 10px;
+    height: 45px;
+    text-align: right;
+}

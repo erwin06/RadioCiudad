@@ -31,3 +31,9 @@ var myApp = angular.module('inApp', [
                     redirectTo: '/main'
                 });
     }]);
+
+// -----------------------------------------------------------------------------
+
+$(document).ready(function(){
+    $("small").remove();
+});
